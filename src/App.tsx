@@ -3,7 +3,7 @@ import './styles/App.css';
 import './styles/GameBoard.css';
 import './styles/Tile.css';
 import './styles/StartMenu.css';
-import { Difficulty } from './types';
+import { Difficulty } from './types/Difficulty';
 import StartMenu from './components/StartMenu';
 import GameBoard from './components/GameBoard';
 

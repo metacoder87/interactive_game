@@ -1,5 +1,5 @@
 import React from 'react';
-import { Difficulty } from '../types';
+import { Difficulty } from '../types/Difficulty';
 
 interface Props {
   onStartGame: (difficulty: Difficulty) => void;

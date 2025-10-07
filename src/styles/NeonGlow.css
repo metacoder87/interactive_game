@@ -1,0 +1,19 @@
+.neon-glow-green {
+  box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00;
+}
+
+.neon-glow-blue {
+  box-shadow: 0 0 5px #0000ff, 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 40px #0000ff;
+}
+
+.neon-glow-pink {
+  box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+}
+
+.neon-glow-orange {
+  box-shadow: 0 0 5px #ffa500, 0 0 10px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500;
+}
+
+.neon-glow-red {
+  box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 40px #ff0000;
+}
