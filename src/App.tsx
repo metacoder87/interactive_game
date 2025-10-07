@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './styles/App.css';
+import './styles/GameBoard.css';
+import './styles/Tile.css';
+import './styles/StartMenu.css';
+import { Difficulty } from './types';
+import StartMenu from './components/StartMenu';
+import GameBoard from './components/GameBoard';
 
 function App() {
+  const [difficulty, setDifficulty] = useState<Difficulty | null>(null);
+
+  const handleStartGame = (selectedDifficulty: Difficulty) => {
+    setDifficulty(selectedDifficulty);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!difficulty ? (
+        <StartMenu onStartGame={handleStartGame} />
+      ) : (
+        <GameBoard difficulty={difficulty} />
+      )}
     </div>
   );
 }
