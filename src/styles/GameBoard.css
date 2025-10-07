@@ -5,6 +5,8 @@
     justify-content: center;
     background-color: #000;
     padding: 1rem;
+    box-shadow: 0 0 20px var(--aura-color), 0 0 30px var(--aura-color), 0 0 40px var(--aura-color);
+    transition: box-shadow 0.5s ease;
   }
   
   .board-row {

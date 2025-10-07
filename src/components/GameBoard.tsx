@@ -9,16 +9,14 @@ interface Props {
 const GameBoard: React.FC<Props> = ({ difficulty }) => {
   const [board, setBoard] = useState<TileData[][]>([]);
   const [gameOver, setGameOver] = useState(false);
+  const [auraColor, setAuraColor] = useState('#000');
 
   const neonColorPalette = [
-    '#00ffff', // Cyan
-    '#00aaff',
-    '#8a2be2', // BlueViolet
-    '#da70d6', // Orchid
-    '#ff00ff', // Magenta
-    '#ff0088',
-    '#ff0044',
-    '#ff0000', // Red
+    '#00ff00', // 0 bombs (Green)
+    '#0000ff', // 1 bomb (Blue)
+    '#ff00ff', // 2 bombs (Pink)
+    '#ffa500', // 3 bombs (Orange)
+    '#ff0000', // 4+ bombs (Red)
   ];
 
   useEffect(() => {
@@ -36,7 +34,9 @@ const GameBoard: React.FC<Props> = ({ difficulty }) => {
     tile.isFlipped = true;
 
     const colorIndex = Math.min(tile.adjacentBombs, neonColorPalette.length - 1);
-    tile.color = neonColorPalette[colorIndex];
+    const newColor = neonColorPalette[colorIndex];
+    tile.color = newColor;
+    setAuraColor(newColor);
 
     setBoard(newBoard);
 
@@ -119,7 +119,7 @@ const GameBoard: React.FC<Props> = ({ difficulty }) => {
   };
 
   return (
-    <div className="game-board">
+    <div className="game-board" style={{ '--aura-color': auraColor } as React.CSSProperties}>
       {board.map((row, rowIndex) => (
         <div key={rowIndex} className="board-row">
           {row.map((tile, colIndex) => (
